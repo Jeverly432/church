@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "prepare": "git config core.hooksPath .githooks"
+    "prepare": "node ./scripts/install-git-hook.cjs"
   },
   "lint-staged": {
     "*.{js,jsx,mjs,ts,tsx}": [
