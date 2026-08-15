@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "prepare": "node ./scripts/install-git-hook.cjs"
+    "prepare": "cd .. && husky frontend/.husky"
   },
   "lint-staged": {
     "*.{js,jsx,mjs,ts,tsx}": [
