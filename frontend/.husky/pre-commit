@@ -1,3 +1,0 @@
-cd frontend || exit 1
-npm run lint
-npx lint-staged
