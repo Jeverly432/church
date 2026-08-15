@@ -6,11 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint",
+    "lint": "eslint .",
     "prepare": "cd .. && husky frontend/.husky"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
+    "*.{js,jsx,mjs,ts,tsx}": [
       "eslint --fix",
       "prettier --write"
     ],
