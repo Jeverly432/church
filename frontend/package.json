@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "prepare": "cd .. && husky frontend/.husky"
+    "prepare": "git config core.hooksPath .githooks"
   },
   "lint-staged": {
     "*.{js,jsx,mjs,ts,tsx}": [
