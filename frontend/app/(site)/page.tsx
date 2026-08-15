@@ -1,3 +1,10 @@
+import { Header } from '@/entities/ui';
+
 export default function AppPage() {
-  return <>app</>;
+  return (
+    <div>
+      <Header />
+      app
+    </div>
+  );
 }
