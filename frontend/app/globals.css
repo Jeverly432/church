@@ -1,8 +1,8 @@
 @import 'tailwindcss';
 
 :root {
-  --green: #009846;
-  --green-hover: #007938;
+  --main-green: #009846;
+  --main-green-hover: #007938;
 }
 
 @theme inline {
@@ -15,13 +15,20 @@
   --color-muted: var(--muted);
   --color-paper: var(--paper);
   --color-line: var(--line);
-
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-main-green: var(--main-green);
+  --color-main-green-hover: var(--main-green-hover);
+  --font-balkara: var(--font-balkara-src);
+  --font-gardens: var(--font-gardens-src);
 }
 
 body {
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: #000000;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 30px;
+  max-width: 1500px;
+  margin: 0 auto;
 }
