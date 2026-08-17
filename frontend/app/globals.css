@@ -3,6 +3,7 @@
 :root {
   --main-green: #009846;
   --main-green-hover: #007938;
+  --main-gray: #f5f5f5;
 }
 
 @theme inline {
@@ -17,6 +18,7 @@
   --color-line: var(--line);
   --color-main-green: var(--main-green);
   --color-main-green-hover: var(--main-green-hover);
+  --color-main-gray: var(--main-gray);
   --font-balkara: var(--font-balkara-src);
   --font-gardens: var(--font-gardens-src);
 }
