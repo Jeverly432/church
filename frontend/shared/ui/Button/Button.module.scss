@@ -1,9 +1,22 @@
 .button {
+  height: 32px;
+  font-family: var(--font-gardens);
+
+  &:global(.ant-btn-lg) {
+    height: 40px;
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  &:global(.ant-btn-sm) {
+    height: 24px;
+  }
+
   &:global(.ant-btn-primary) {
     background-color: var(--main-green);
     border-color: var(--main-green);
 
-    &:hover{
+    &:hover {
       background-color: var(--main-green-hover) !important;
       border-color: var(--main-green-hover) !important;
     }
