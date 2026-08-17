@@ -1,0 +1,11 @@
+.button {
+  &:global(.ant-btn-primary) {
+    background-color: var(--main-green);
+    border-color: var(--main-green);
+
+    &:hover{
+      background-color: var(--main-green-hover) !important;
+      border-color: var(--main-green-hover) !important;
+    }
+  }
+}
