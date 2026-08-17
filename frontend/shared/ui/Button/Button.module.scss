@@ -1,6 +1,6 @@
 .button {
   height: 32px;
-  font-family: var(--font-gardens);
+  font-family: var(--font-gardens-src) !important;
 
   &:global(.ant-btn-lg) {
     height: 40px;

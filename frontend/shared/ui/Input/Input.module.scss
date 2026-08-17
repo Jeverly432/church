@@ -1,0 +1,27 @@
+.input {
+  font-family: var(--font-gardens-src) !important;
+
+  &:global(.ant-input-sm) {
+    height: 24px !important;
+  }
+
+  &:hover {
+    border-color: var(--main-green) !important;
+  }
+
+  &:focus,
+  &:global(.ant-input-focused) {
+    border-color: var(--main-green) !important;
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--main-green) 20%, transparent) !important;
+  }
+
+  &::placeholder {
+    font-family: var(--font-gardens-src);
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+
+.textarea {
+  resize: none !important;
+}

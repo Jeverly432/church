@@ -12,7 +12,7 @@ export const Header = () => {
             <Link href={Routes.Home}>
               <Logo />
             </Link>
-            <p className='max-w-54.5 text-sm w-full leading-4'>
+            <p className='max-w-54.5 text-sm w-full leading-4 text-black'>
               АООО «Братство православной молодежи святого благоверного князя Александра Невского»
             </p>
           </div>
@@ -21,7 +21,7 @@ export const Header = () => {
               <li key={index}>
                 <Link
                   href={link.href}
-                  className='text-base hover:text-main-green-hover leading-5.5 font-balkara transition-[0.3s]'
+                  className='text-base active:text-main-green-hover hover:text-main-gray-hover leading-5.5 font-balkara transition-[0.3s] text-black'
                 >
                   {link.title}
                 </Link>

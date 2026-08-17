@@ -2,7 +2,7 @@ import { quality } from './About.data';
 
 export const About = () => {
   return (
-    <div>
+    <section>
       <div className='container'>
         <div className='flex flex-col gap-7'>
           <div className='flex flex-col gap-4.5'>
@@ -25,6 +25,6 @@ export const About = () => {
           </ul>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
