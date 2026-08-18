@@ -1,6 +1,6 @@
 import { Button } from '@/shared';
 import { Routes } from '@/shared/utils';
-import banner from '@shared/assets/images/Home/banner.webp';
+import banner from '@shared/assets/images/Home/banner.jpg';
 import Image from 'next/image';
 
 export const Banner = () => {

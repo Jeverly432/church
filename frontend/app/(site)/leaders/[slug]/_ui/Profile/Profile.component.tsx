@@ -10,7 +10,7 @@ export const Profile = ({ leader }: { leader: Leader }) => {
           <div className='flex gap-6 items-start'>
             <div className='flex flex-col gap-3'>
               <div className='relative w-118.5 h-118.5 overflow-hidden rounded-xl shrink-0'>
-                <Image src={leader.image} alt={leader.name} className='object-cover' fill sizes='360px' />
+                <Image src={leader.image} alt={leader.name} className='object-cover' fill />
               </div>
               <div className='flex flex-col gap-2'>
                 <h2 className='text-black text-[24px] leading-7.5'>{leader.name}</h2>

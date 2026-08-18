@@ -1,5 +1,5 @@
 import type { StaticImageData } from 'next/image';
-import lead1 from '@shared/assets/images/Leaders/lead-1.webp';
+import lead1 from '@shared/assets/images/Leaders/lead-1.jpg';
 import lead2 from '@shared/assets/images/Leaders/lead-2.webp';
 import lead3 from '@shared/assets/images/Leaders/lead-3.webp';
 import lead4 from '@shared/assets/images/Leaders/lead-4.webp';

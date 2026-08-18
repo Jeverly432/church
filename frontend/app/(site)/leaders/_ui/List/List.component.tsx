@@ -15,10 +15,12 @@ export const List = () => {
               <li className='flex flex-col w-[calc(33%-7px)]' key={leader.slug}>
                 <Link className='group rounded-xl bg-main-gray gap-3 p-3 relative' href={Routes.Leader(leader.slug)}>
                   <div className='flex w-full h-67 overflow-hidden rounded-xl relative'>
-                    <Image src={leader.image} alt={leader.name} className='object-cover' fill sizes='33vw' />
+                    <Image src={leader.image} alt={leader.name} className='object-cover' fill />
                   </div>
                   <div className='flex flex-col gap-2 pt-3'>
-                    <h3 className='text-black text-[24px] leading-7.5'>{leader.name}</h3>
+                    <h3 className='text-black text-[24px] leading-7.5 group-hover:text-main-green transition-colors'>
+                      {leader.name}
+                    </h3>
                     <span className='text-black text-[16px] leading-5.5'>{leader.title}</span>
                   </div>
                   <div className='absolute right-6.5 top-6.5 bg-main-green rounded-md w-9 h-9 flex items-center justify-center'>
