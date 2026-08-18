@@ -7,6 +7,7 @@ export const sitemapLinks = [
   { href: Routes.Docs, title: 'Документы' },
   { href: Routes.Donations, title: 'Реквизиты' },
   { href: Routes.Church, title: 'Храм святой мч. Лукии Сиракузской' },
+  { href: Routes.Dashboard, title: 'Админка' },
 ];
 
 export const contactLinks = [

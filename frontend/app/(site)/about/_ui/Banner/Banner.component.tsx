@@ -18,7 +18,7 @@ export const Banner = () => {
               {list.map((item, index) => (
                 <li className='flex flex-col gap-2' key={index}>
                   <h2 className='text-[24px] leading-6 text-black'>{item.title}</h2>
-                  <p className='text-[16px] leading-5.5 text-black'>{item.desc}</p>
+                  <p className='text-[16px] leading-5.5 text-black text-justify'>{item.desc}</p>
                 </li>
               ))}
             </ul>

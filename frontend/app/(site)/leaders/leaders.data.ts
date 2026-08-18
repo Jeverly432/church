@@ -36,7 +36,7 @@ export const leaders: Leader[] = [
   },
   {
     slug: 'homich-egor',
-    name: 'Хомич Егор Андреевич',
+    name: 'Хомич Егор',
     title: 'Руководитель административно-финансового отдела',
     image: lead4,
     bioTitle: 'Административно-финансовая работа',
@@ -54,7 +54,7 @@ export const leaders: Leader[] = [
   },
   {
     slug: 'elkina-yulia',
-    name: 'Елькина Юлия Александровна',
+    name: 'Елькина Юлия',
     title: 'Руководитель социального отдела',
     image: lead2,
     bioTitle: 'Социальное служение',
@@ -72,7 +72,7 @@ export const leaders: Leader[] = [
   },
   {
     slug: 'kulinchenko-valeria',
-    name: 'Кулинченко Валерия Сергеевна',
+    name: 'Кулинченко Валерия',
     title: 'Руководитель культурного отдела',
     image: lead3,
     bioTitle: 'Культурные проекты',
@@ -90,7 +90,7 @@ export const leaders: Leader[] = [
   },
   {
     slug: 'manoilo-anastasia',
-    name: 'Манойло Анастасия Сергеевна',
+    name: 'Манойло Анастасия',
     title: 'Руководитель отдела по связям с общественностью',
     image: lead1,
     bioTitle: 'Связи с общественностью',
