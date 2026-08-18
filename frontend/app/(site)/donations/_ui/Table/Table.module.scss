@@ -1,0 +1,23 @@
+.table {
+  :global(.ant-table) {
+    font-family: var(--font-gardens-src) !important;
+    background: transparent !important;
+  }
+
+  :global(.ant-table-container) {
+    border: none !important;
+  }
+
+  :global(.ant-table-tbody > tr > td) {
+    padding: 14px 0 !important;
+    border-bottom: 1px solid #bfbfbf6b !important;
+    border-right: none !important;
+    background: transparent !important;
+    font-size: 14px !important;
+    vertical-align: top;
+  }
+
+  :global(.ant-table-tbody > tr:hover > td) {
+    background: transparent !important;
+  }
+}
