@@ -7,3 +7,5 @@ export { Telegram } from './Telegram';
 export { Vk } from './Vk';
 export { Arrow } from './Arrow';
 export { Socials } from './Socials';
+export { Pin } from './Pin';
+export { DownloadDoc } from './DownloadDoc';

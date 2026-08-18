@@ -21,4 +21,13 @@
       border-color: var(--main-green-hover) !important;
     }
   }
+
+  &:global(.ant-btn-link) {
+    color: var(--main-green);
+
+    &:hover,
+    &:active {
+      color: var(--main-green-hover) !important;
+    }
+  }
 }
