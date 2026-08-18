@@ -1,7 +1,8 @@
 import Image from 'next/image';
 import { Arrow } from '@/shared/assets/icons';
 import Link from 'next/link';
-import { leaders } from './List.data';
+import { Routes } from '@/shared/utils';
+import { leaders } from '../../leaders.data';
 
 export const List = () => {
   return (
@@ -11,10 +12,10 @@ export const List = () => {
           <h1 className='text-[46px] font-balkara text-black'>Руководство</h1>
           <ul className='flex flex-wrap gap-4 pt-8'>
             {leaders.map((leader) => (
-              <li className='flex flex-col w-[calc(33%-7px)]' key={leader.id}>
-                <Link className='group rounded-xl bg-main-gray gap-3 p-3 relative' href={leader.href}>
+              <li className='flex flex-col w-[calc(33%-7px)]' key={leader.slug}>
+                <Link className='group rounded-xl bg-main-gray gap-3 p-3 relative' href={Routes.Leader(leader.slug)}>
                   <div className='flex w-full h-67 overflow-hidden rounded-xl relative'>
-                    <Image src={leader.image} alt={leader.name} className='object-cover' fill />
+                    <Image src={leader.image} alt={leader.name} className='object-cover' fill sizes='33vw' />
                   </div>
                   <div className='flex flex-col gap-2 pt-3'>
                     <h3 className='text-black text-[24px] leading-7.5'>{leader.name}</h3>

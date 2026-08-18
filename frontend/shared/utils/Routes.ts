@@ -6,4 +6,5 @@ export const Routes = {
   Donations: '/donations',
   Church: '/church',
   Leaders: '/leaders',
+  Leader: (slug: string) => `/leaders/${slug}`,
 };
