@@ -27,7 +27,7 @@ export const Feedback = () => {
   };
 
   return (
-    <section>
+    <section className='mb-20'>
       {contextHolder}
       <div className='container'>
         <div className='flex justify-between bg-main-gray rounded-xl p-5'>
