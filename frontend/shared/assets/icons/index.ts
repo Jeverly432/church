@@ -5,3 +5,5 @@ export { Care } from './Care';
 export { FooterLogo } from './FooterLogo';
 export { Telegram } from './Telegram';
 export { Vk } from './Vk';
+export { Arrow } from './Arrow';
+export { Socials } from './Socials';

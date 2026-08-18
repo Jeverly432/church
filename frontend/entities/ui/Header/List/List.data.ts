@@ -6,7 +6,7 @@ export const links = [
     title: 'О БРАТСТВЕ',
   },
   {
-    href: Routes.Guide,
+    href: Routes.Leaders,
     title: 'РУКОВОДСТВО',
   },
   {

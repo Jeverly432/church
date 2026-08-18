@@ -3,7 +3,7 @@ import { Routes } from '@/shared/utils';
 export const sitemapLinks = [
   { href: Routes.About, title: 'О Братстве' },
   { href: Routes.News, title: 'Новости' },
-  { href: Routes.Guide, title: 'Руководство' },
+  { href: Routes.Leaders, title: 'Руководство' },
   { href: Routes.Docs, title: 'Документы' },
   { href: Routes.Donations, title: 'Реквизиты' },
   { href: Routes.Church, title: 'Храм святой мч. Лукии Сиракузской' },

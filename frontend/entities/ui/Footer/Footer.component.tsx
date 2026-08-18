@@ -1,4 +1,4 @@
-import { FooterLogo, Telegram, Vk } from '@/shared/assets/icons';
+import { FooterLogo, Socials, Telegram, Vk } from '@/shared/assets/icons';
 import Link from 'next/link';
 import { contactLinks, sitemapLinks } from './Footer.data';
 
@@ -66,6 +66,16 @@ export const Footer = () => {
                       rel='noopener noreferrer'
                     >
                       <Vk />
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className='text-main-green hover:text-main-green-hover transition-colors'
+                      href='https://www.tiktok.com/@useralexandernevsky?_r=1&_t=ZS-98xejToale5'
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
+                      <Socials />
                     </a>
                   </li>
                 </ul>
