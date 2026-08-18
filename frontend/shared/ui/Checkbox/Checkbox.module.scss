@@ -1,0 +1,25 @@
+.checkbox {
+  font-family: var(--font-gardens-src);
+
+  :global(.ant-checkbox-checked:not(.ant-checkbox-disabled)) {
+    background-color: var(--main-green) !important;
+    border-color: var(--main-green) !important;
+  }
+
+  &:hover :global(.ant-checkbox:not(.ant-checkbox-checked):not(.ant-checkbox-disabled)) {
+    border-color: var(--main-green) !important;
+  }
+
+  :global(.ant-checkbox-disabled) {
+    background-color: var(--main-gray) !important;
+    border-color: #d9d9d9 !important;
+
+    &:after {
+      border-color: rgba(0, 0, 0, 0.25) !important;
+    }
+  }
+}
+
+:global(.ant-form-item-has-error) .checkbox :global(.ant-checkbox:not(.ant-checkbox-checked):not(.ant-checkbox-disabled)) {
+  border-color: var(--ant-color-error, #ff4d4f) !important;
+}

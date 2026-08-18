@@ -1,4 +1,4 @@
-import { Header } from '@/entities/ui';
+import { Footer, Header } from '@/entities/ui';
 import localFont from 'next/font/local';
 
 const balkara = localFont({
@@ -18,6 +18,7 @@ export default function AppLayout({ children }: LayoutProps<'/'>) {
     <body className={`${balkara.variable} ${gardens.variable} min-h-full flex flex-col font-gardens`}>
       <Header />
       {children}
+      <Footer />
     </body>
   );
 }

@@ -5,7 +5,7 @@ import { links } from './Header.data';
 
 export const Header = () => {
   return (
-    <div className='py-3'>
+    <header className='py-3'>
       <div className='container'>
         <div className='flex justify-between'>
           <div className='flex items-center gap-5'>
@@ -30,6 +30,6 @@ export const Header = () => {
           </ul>
         </div>
       </div>
-    </div>
+    </header>
   );
 };

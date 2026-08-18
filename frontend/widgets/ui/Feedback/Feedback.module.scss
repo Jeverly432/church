@@ -15,3 +15,26 @@
     font-family: var(--font-gardens-src) !important;
   }
 }
+
+.consent {
+  margin-bottom: 0 !important;
+  margin-top: 12px !important;
+  max-width: 450px !important;
+
+  :global(.ant-checkbox-label) {
+    font-size: 10px;
+    line-height: 16px;
+    color: var(--main-gray-hover);
+    font-family: var(--font-gardens-src);
+  }
+
+  :global(.ant-checkbox-wrapper) {
+    align-items: flex-start;
+  }
+}
+
+.silent {
+  :global(.ant-form-item-explain) {
+    display: none;
+  }
+}
