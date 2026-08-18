@@ -6,7 +6,7 @@ const linkClassName = ' hover:text-main-green text-[16px] leading-5.5 text-white
 
 export const Footer = () => {
   return (
-    <footer className='bg-main-green-dark pt-10 pb-6.5'>
+    <footer className='bg-main-green-dark pt-10 pb-6.5 mt-auto'>
       <div className='container'>
         <div className='flex flex-col'>
           <div className='flex justify-between items-start'>

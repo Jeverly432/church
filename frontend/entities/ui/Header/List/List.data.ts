@@ -2,7 +2,7 @@ import { Routes } from '@/shared/utils';
 
 export const links = [
   {
-    href: Routes.Home,
+    href: Routes.About,
     title: 'О БРАТСТВЕ',
   },
   {

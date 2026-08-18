@@ -1,7 +1,7 @@
 import { Routes } from '@/shared/utils';
 import { Logo } from '@shared/assets/icons';
 import Link from 'next/link';
-import { links } from './Header.data';
+import { List } from './List/List.component';
 
 export const Header = () => {
   return (
@@ -16,18 +16,7 @@ export const Header = () => {
               АООО «Братство православной молодежи святого благоверного князя Александра Невского»
             </p>
           </div>
-          <ul className='flex gap-6.5 items-center'>
-            {links.map((link, index) => (
-              <li key={index}>
-                <Link
-                  href={link.href}
-                  className='text-base active:text-main-green-hover hover:text-main-gray-hover leading-5.5 font-balkara transition-[0.3s] text-black'
-                >
-                  {link.title}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <List />
         </div>
       </div>
     </header>
