@@ -1,25 +1,50 @@
-import { notFound } from 'next/navigation';
+'use client';
+
 import { Feedback } from '@/widgets';
-import { getLeader, leaders } from '../leaders.data';
+import { useLeadersStore } from '@/shared/store/leaders';
+import { useParams } from 'next/navigation';
+import { useEffect } from 'react';
 import { Gallery } from './_ui/Gallery/Gallery.component';
 import { Profile } from './_ui/Profile/Profile.component';
 
-export const generateStaticParams = () => {
-  return leaders.map(({ slug }) => ({ slug }));
-};
+export default function LeaderPage() {
+  const params = useParams();
+  const slug = String(params.slug);
+  const currentLeader = useLeadersStore((state) => state.currentLeader);
+  const getLeader = useLeadersStore((state) => state.getLeader);
+  const isFetching = useLeadersStore((state) => state.isFetching);
+  const fetchedId = useLeadersStore((state) => state.fetchedId);
 
-export default async function LeaderPage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
-  const leader = getLeader(slug);
+  useEffect(() => {
+    void getLeader(slug);
+  }, [getLeader, slug]);
 
-  if (!leader) {
-    notFound();
+  const showLoader = isFetching || fetchedId !== slug;
+
+  if (showLoader) {
+    return (
+      <section className='pt-10 pb-20'>
+        <div className='container'>
+          <div className='h-118.5 rounded-xl bg-main-gray' />
+        </div>
+      </section>
+    );
+  }
+
+  if (!currentLeader) {
+    return (
+      <section className='pt-10 pb-20'>
+        <div className='container'>
+          <p className='text-[16px] leading-5.5 text-main-gray-hover'>Руководитель не найден</p>
+        </div>
+      </section>
+    );
   }
 
   return (
     <>
-      <Profile leader={leader} />
-      <Gallery />
+      <Profile leader={currentLeader} />
+      <Gallery photos={currentLeader.photos} />
       <Feedback />
     </>
   );

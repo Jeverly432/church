@@ -1,5 +1,8 @@
-import Image from 'next/image';
-import type { Leader } from '../../../leaders.data';
+'use client';
+
+import type { Leader } from '@/shared/store/leaders';
+
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
 
 export const Profile = ({ leader }: { leader: Leader }) => {
   return (
@@ -7,18 +10,22 @@ export const Profile = ({ leader }: { leader: Leader }) => {
       <div className='container'>
         <div className='flex flex-col gap-6'>
           <h1 className='text-[32px] font-balkara text-black'>О руководителе</h1>
-          <div className='flex gap-6 items-start'>
+          <div className='flex items-start gap-6'>
             <div className='flex flex-col gap-3'>
-              <div className='relative w-118.5 h-118.5 overflow-hidden rounded-xl shrink-0'>
-                <Image src={leader.image} alt={leader.name} className='object-cover' fill />
+              <div className='relative h-118.5 w-118.5 shrink-0 overflow-hidden rounded-xl'>
+                {leader.portrait ? (
+                  <img src={`${API_URL}${leader.portrait}`} alt={leader.name} className='h-full w-full object-cover' />
+                ) : (
+                  <div className='h-full w-full bg-main-gray' />
+                )}
               </div>
               <div className='flex flex-col gap-2'>
-                <h2 className='text-black text-[24px] leading-7.5'>{leader.name}</h2>
-                <span className='text-black text-[16px] leading-5.5'>{leader.title}</span>
+                <h2 className='text-[24px] leading-7.5 text-black'>{leader.name}</h2>
+                <span className='text-[16px] leading-5.5 text-black'>{leader.title}</span>
               </div>
             </div>
             <div className='flex flex-col gap-3.5'>
-              <h3 className='text-[24px] leading-6 text-black'>{leader.bioTitle}</h3>
+              {leader.bioTitle ? <h3 className='text-[24px] leading-6 text-black'>{leader.bioTitle}</h3> : null}
               <ul className='flex flex-col gap-3'>
                 {leader.bio.map((paragraph) => (
                   <li className='text-[16px] leading-5.5 text-black' key={paragraph}>

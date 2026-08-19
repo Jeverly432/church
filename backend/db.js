@@ -50,6 +50,31 @@ const initDb = async () => {
       updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
     )
   `);
+
+  await query(`
+    CREATE TABLE IF NOT EXISTS leaders (
+      id SERIAL PRIMARY KEY,
+      slug VARCHAR(120) UNIQUE NOT NULL,
+      name VARCHAR(255) NOT NULL,
+      title VARCHAR(255) NOT NULL,
+      bio_title VARCHAR(255) NOT NULL DEFAULT '',
+      bio TEXT[] NOT NULL DEFAULT '{}',
+      portrait VARCHAR(500),
+      sort_order INTEGER NOT NULL DEFAULT 0,
+      created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+      updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+    )
+  `);
+
+  await query(`
+    CREATE TABLE IF NOT EXISTS leader_photos (
+      id SERIAL PRIMARY KEY,
+      leader_id INTEGER NOT NULL REFERENCES leaders(id) ON DELETE CASCADE,
+      path VARCHAR(500) NOT NULL,
+      sort_order INTEGER NOT NULL DEFAULT 0,
+      created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+    )
+  `);
 };
 
 module.exports = {

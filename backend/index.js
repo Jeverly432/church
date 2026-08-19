@@ -7,6 +7,7 @@ const { seedAdmin } = require('./db/seed');
 const authRouter = require('./routes/authRouter');
 const newsRouter = require('./routes/newsRouter');
 const docsRouter = require('./routes/docsRouter');
+const leadersRouter = require('./routes/leadersRouter');
 const feedbackRouter = require('./routes/feedbackRouter');
 const path = require('path');
 
@@ -28,6 +29,7 @@ app.use('/uploads', express.static(uploadsDir));
 app.use('/api/auth', authRouter);
 app.use('/api/news', newsRouter);
 app.use('/api/docs', docsRouter);
+app.use('/api/leaders', leadersRouter);
 app.use('/api/feedback', feedbackRouter);
 
 app.use((err, _req, res, _next) => {

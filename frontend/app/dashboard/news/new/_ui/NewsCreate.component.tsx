@@ -95,7 +95,7 @@ export const NewsCreate = () => {
           >
             <Upload maxCount={10} accept='.jpg,.jpeg,.png,.webp' beforeUpload={() => false} />
           </Form.Item>
-          <Form.Item>
+          <Form.Item className='mb-0!'>
             <Button size='large' htmlType='submit' loading={isLoading}>
               Опубликовать
             </Button>

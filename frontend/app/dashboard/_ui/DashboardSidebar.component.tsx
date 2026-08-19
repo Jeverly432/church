@@ -8,6 +8,7 @@ import { usePathname } from 'next/navigation';
 const nav = [
   { href: Routes.DashboardNews, title: 'Новости' },
   { href: Routes.DashboardDocs, title: 'Документы' },
+  { href: Routes.DashboardLeaders, title: 'Руководители' },
 ];
 
 export const DashboardSidebar = () => {

@@ -16,4 +16,7 @@ export const Routes = {
   DashboardDocs: '/dashboard/docs',
   DashboardDocsCreate: '/dashboard/docs/new',
   DashboardDocsCurrent: (id: string) => `/dashboard/docs/${id}`,
+  DashboardLeaders: '/dashboard/leaders',
+  DashboardLeadersCreate: '/dashboard/leaders/new',
+  DashboardLeadersCurrent: (slug: string) => `/dashboard/leaders/${slug}`,
 };
