@@ -12,20 +12,20 @@ class AuthController {
       const password = String(req.body?.password || '');
 
       if (!email || !password) {
-        return res.status(400).json({ message: 'Email and password are required' });
+        return res.status(400).json({ message: 'Нужны логин и пароль' });
       }
 
       const { rows } = await query('SELECT id, email, password_hash, role FROM users WHERE email = $1', [email]);
       const user = rows[0];
 
       if (!user) {
-        return res.status(401).json({ message: 'Invalid email or password' });
+        return res.status(401).json({ message: 'Неверный логин или пароль' });
       }
 
       const isValidPassword = await bcrypt.compare(password, user.password_hash);
 
       if (!isValidPassword) {
-        return res.status(401).json({ message: 'Invalid email or password' });
+        return res.status(401).json({ message: 'Неверный логин или пароль' });
       }
 
       const token = jwt.sign({ id: user.id, email: user.email, role: user.role }, jwtSecret, {
@@ -42,7 +42,7 @@ class AuthController {
       });
     } catch (e) {
       console.error('Login error:', e);
-      return res.status(500).json({ message: 'Login error' });
+      return res.status(500).json({ message: 'Ошибка входа' });
     }
   }
 
@@ -52,13 +52,13 @@ class AuthController {
       const user = rows[0];
 
       if (!user) {
-        return res.status(401).json({ message: 'Unauthorized' });
+        return res.status(401).json({ message: 'Нужна авторизация' });
       }
 
       return res.json({ user });
     } catch (e) {
       console.error('Me error:', e);
-      return res.status(500).json({ message: 'Server error' });
+      return res.status(500).json({ message: 'Ошибка сервера' });
     }
   }
 }

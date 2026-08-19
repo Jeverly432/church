@@ -1,0 +1,63 @@
+.upload {
+  font-family: var(--font-gardens-src);
+  --ant-color-primary: var(--main-green);
+  --ant-color-primary-hover: var(--main-green-hover);
+  --ant-color-primary-border: var(--main-green);
+  --ant-color-primary-border-hover: var(--main-green-hover);
+
+  :global(.ant-upload.ant-upload-select) {
+    border-color: #d9d9d9 !important;
+    background: #fff !important;
+
+    &:hover {
+      border-color: var(--main-green) !important;
+    }
+  }
+
+  :global(.ant-upload-list-item) {
+    border-color: #d9d9d9 !important;
+
+    &:hover {
+      border-color: var(--main-green) !important;
+    }
+  }
+
+  :global(.ant-upload-list-item-name),
+  :global(.ant-upload-text-icon) {
+    color: var(--main-green);
+  }
+
+  :global(.anticon) {
+    color: var(--main-green);
+  }
+}
+
+:global(.ant-form-item-has-error) .upload {
+  :global(.ant-upload.ant-upload-select),
+  :global(.ant-upload-list-item) {
+    border-color: var(--ant-color-error, #ff4d4f) !important;
+  }
+}
+
+.trigger {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: none;
+  color: var(--main-green);
+  font-family: var(--font-gardens-src);
+  font-size: 14px;
+  line-height: 22px;
+  cursor: pointer;
+}
+
+.plus {
+  font-size: 24px;
+  line-height: 1;
+  color: var(--main-green);
+}

@@ -4,3 +4,4 @@ export { Checkbox } from './Checkbox/Checkbox.component';
 export { Input } from './Input/Input.component';
 export { Link } from './Link/Link.component';
 export { Skeleton } from './Skeleton/Skeleton.component';
+export { Upload } from './Upload/Upload.component';

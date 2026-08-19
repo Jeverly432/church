@@ -4,7 +4,7 @@ const authMiddleware = require('../middleware/authMiddleware');
 const uploadNewsPhotos = require('../middleware/uploadNewsPhotos');
 
 const router = Router();
-const photosUpload = uploadNewsPhotos.array('photos', 10);
+const photosUpload = uploadNewsPhotos.single('photo');
 
 router.get('/', newsController.list);
 router.get('/tags', newsController.tags);

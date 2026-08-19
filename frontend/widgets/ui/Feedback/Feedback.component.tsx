@@ -1,25 +1,44 @@
 'use client';
 
 import { Button, Checkbox, Input } from '@/shared';
+import { apiRequest } from '@/shared/api/client';
 import { Form, FormProps, message } from 'antd';
 import cn from 'classnames';
 import styles from './Feedback.module.scss';
 import { formatRuPhone, feedbackMessages, validateRuPhone } from './Feedback.data';
 import { useState } from 'react';
 
+type FeedbackForm = {
+  name: string;
+  phone: string;
+  desc: string;
+  agreement: boolean;
+};
+
 export const Feedback = () => {
   const [messageApi, contextHolder] = message.useMessage();
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [formKey, setFormKey] = useState(0);
 
-  const onSubmit = () => {
+  const onFinish: FormProps<FeedbackForm>['onFinish'] = async (values) => {
     setIsLoading(true);
-    setTimeout(() => {
-      setIsLoading(false);
+
+    try {
+      await apiRequest('/api/feedback', {
+        method: 'POST',
+        body: {
+          name: values.name,
+          phone: values.phone,
+          desc: values.desc,
+        },
+      });
+      setFormKey((key) => key + 1);
+      messageApi.success(feedbackMessages.success);
+    } catch {
       messageApi.error(feedbackMessages.error);
-    }, 3000);
-  };
-  const onFinish: FormProps['onFinish'] = () => {
-    onSubmit();
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const onFinishFailed: FormProps['onFinishFailed'] = (errorInfo) => {
@@ -38,6 +57,7 @@ export const Feedback = () => {
             </p>
           </div>
           <Form
+            key={formKey}
             name='feedback'
             layout='vertical'
             requiredMark={false}

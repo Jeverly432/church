@@ -5,7 +5,10 @@ import cn from 'classnames';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-const nav = [{ href: Routes.DashboardNews, title: 'Новости' }];
+const nav = [
+  { href: Routes.DashboardNews, title: 'Новости' },
+  { href: Routes.DashboardDocs, title: 'Документы' },
+];
 
 export const DashboardSidebar = () => {
   const pathname = usePathname();

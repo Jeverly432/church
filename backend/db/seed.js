@@ -4,7 +4,7 @@ const { adminEmail, adminPassword } = require('../config');
 
 const seedAdmin = async () => {
   if (!adminEmail || !adminPassword) {
-    console.warn('ADMIN_EMAIL or ADMIN_PASSWORD is not set, skip admin seed');
+    console.warn('ADMIN_EMAIL или ADMIN_PASSWORD не заданы, админ не создан');
     return;
   }
 

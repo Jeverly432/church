@@ -85,7 +85,7 @@ class NewsController {
       });
     } catch (e) {
       console.error('News list error:', e);
-      return res.status(500).json({ message: 'News list error' });
+      return res.status(500).json({ message: 'Не удалось получить список новостей' });
     }
   }
 
@@ -95,14 +95,14 @@ class NewsController {
       const news = rows[0];
 
       if (!news) {
-        return res.status(404).json({ message: 'News not found' });
+        return res.status(404).json({ message: 'Новость не найдена' });
       }
 
       const photos = await getPhotos(news.id);
       return res.json({ news: mapNews(news, photos) });
     } catch (e) {
       console.error('News get error:', e);
-      return res.status(500).json({ message: 'News get error' });
+      return res.status(500).json({ message: 'Не удалось получить новость' });
     }
   }
 
@@ -114,11 +114,11 @@ class NewsController {
       const date = req.body?.date || null;
 
       if (!title) {
-        return res.status(400).json({ message: 'Title is required' });
+        return res.status(400).json({ message: 'Нужен заголовок' });
       }
 
       if (!isAllowedNewsTag(tag)) {
-        return res.status(400).json({ message: 'Invalid tag' });
+        return res.status(400).json({ message: 'Недопустимый тег' });
       }
 
       const { rows } = await query(
@@ -127,13 +127,13 @@ class NewsController {
       );
 
       const news = rows[0];
-      await savePhotos(news.id, req.files || []);
+      await savePhotos(news.id, req.file ? [req.file] : []);
       const photos = await getPhotos(news.id);
 
       return res.status(201).json({ news: mapNews(news, photos) });
     } catch (e) {
       console.error('News create error:', e);
-      return res.status(500).json({ message: e.message || 'News create error' });
+      return res.status(500).json({ message: e.message || 'Не удалось создать новость' });
     }
   }
 
@@ -143,7 +143,7 @@ class NewsController {
       const current = rows[0];
 
       if (!current) {
-        return res.status(404).json({ message: 'News not found' });
+        return res.status(404).json({ message: 'Новость не найдена' });
       }
 
       const title = req.body?.title !== undefined ? String(req.body.title).trim() : current.title;
@@ -152,11 +152,11 @@ class NewsController {
       const date = req.body?.date !== undefined ? req.body.date || null : current.published_at;
 
       if (!title) {
-        return res.status(400).json({ message: 'Title is required' });
+        return res.status(400).json({ message: 'Нужен заголовок' });
       }
 
       if (!isAllowedNewsTag(tag)) {
-        return res.status(400).json({ message: 'Invalid tag' });
+        return res.status(400).json({ message: 'Недопустимый тег' });
       }
 
       const updated = await query(
@@ -164,13 +164,13 @@ class NewsController {
         [title, tag, text, date, current.id],
       );
 
-      await savePhotos(current.id, req.files || []);
+      await savePhotos(current.id, req.file ? [req.file] : []);
       const photos = await getPhotos(current.id);
 
       return res.json({ news: mapNews(updated.rows[0], photos) });
     } catch (e) {
       console.error('News update error:', e);
-      return res.status(500).json({ message: e.message || 'News update error' });
+      return res.status(500).json({ message: e.message || 'Не удалось обновить новость' });
     }
   }
 
@@ -180,15 +180,15 @@ class NewsController {
       const { rowCount } = await query('DELETE FROM news WHERE id = $1', [req.params.id]);
 
       if (!rowCount) {
-        return res.status(404).json({ message: 'News not found' });
+        return res.status(404).json({ message: 'Новость не найдена' });
       }
 
       photos.forEach((photo) => removeFile(photo.path));
 
-      return res.json({ message: 'News deleted' });
+      return res.json({ message: 'Новость удалена' });
     } catch (e) {
       console.error('News delete error:', e);
-      return res.status(500).json({ message: 'News delete error' });
+      return res.status(500).json({ message: 'Не удалось удалить новость' });
     }
   }
 
@@ -201,16 +201,16 @@ class NewsController {
       const photo = rows[0];
 
       if (!photo) {
-        return res.status(404).json({ message: 'Photo not found' });
+        return res.status(404).json({ message: 'Фото не найдено' });
       }
 
       await query('DELETE FROM news_photos WHERE id = $1', [photo.id]);
       removeFile(photo.path);
 
-      return res.json({ message: 'Photo deleted' });
+      return res.json({ message: 'Фото удалено' });
     } catch (e) {
       console.error('News photo delete error:', e);
-      return res.status(500).json({ message: 'News photo delete error' });
+      return res.status(500).json({ message: 'Не удалось удалить фото' });
     }
   }
 }

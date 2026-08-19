@@ -2,7 +2,7 @@ const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
 
-const uploadDir = path.join(__dirname, '..', 'uploads', 'news');
+const uploadDir = path.join(__dirname, '..', 'uploads', 'docs');
 
 fs.mkdirSync(uploadDir, { recursive: true });
 
@@ -17,11 +17,11 @@ const storage = multer.diskStorage({
 });
 
 const fileFilter = (_req, file, cb) => {
-  const allowed = ['.jpg', '.jpeg', '.png', '.webp'];
+  const allowed = ['.pdf', '.doc', '.docx', '.xls', '.xlsx', '.odt', '.rtf'];
   const ext = path.extname(file.originalname).toLowerCase();
 
   if (!allowed.includes(ext)) {
-    cb(new Error('Можно загрузить только jpg, jpeg, png и webp'));
+    cb(new Error('Можно загрузить только pdf, doc, docx, xls, xlsx, odt и rtf'));
     return;
   }
 
@@ -31,5 +31,5 @@ const fileFilter = (_req, file, cb) => {
 module.exports = multer({
   storage,
   fileFilter,
-  limits: { fileSize: 8 * 1024 * 1024 },
+  limits: { fileSize: 20 * 1024 * 1024 },
 });

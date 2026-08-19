@@ -1,36 +1,33 @@
 import type { ColumnsType } from 'antd/es/table';
 import { DownloadDoc, Pin } from '@/shared/assets/icons';
-import { DocRow } from './Table.types';
 import { Button } from '@/shared';
+import type { Document as Doc } from '@/shared/store/docs';
+import { downloadFile } from '@/shared/utils';
 
-export const docsData: DocRow[] = [
-  { key: '1', title: 'Устав', href: '#' },
-  { key: '2', title: 'Свидетельство о государственной регистрации', href: '#' },
-  { key: '3', title: 'Годовой финансовый отчет за 2024 год', href: '#' },
-  { key: '4', title: 'Годовой финансовый отчет за 2025 год', href: '#' },
-  { key: '5', title: 'Название документа 5', href: '#' },
-  { key: '6', title: 'Название документа 6', href: '#' },
-  { key: '7', title: 'Название документа 7', href: '#' },
-];
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
 
-export const columns: ColumnsType<DocRow> = [
+export const columns: ColumnsType<Doc> = [
   {
     dataIndex: 'title',
     key: 'title',
-    render: (title: string) => (
+    render: (title: string, item) => (
       <div className='flex items-center justify-between gap-4'>
         <span>{title}</span>
-        <Pin className='shrink-0 text-[#bfbfbf]' />
+        <Pin className={`shrink-0 ${item.pinned ? 'opacity-100' : 'opacity-0'}`} />
       </div>
     ),
   },
   {
-    dataIndex: 'href',
-    key: 'href',
+    key: 'download',
     width: 334,
-    render: (href: string) => (
+    render: (_value, item) => (
       <div className='flex w-full h-full'>
-        <Button href={href} type='link' className='mx-auto' size='medium'>
+        <Button
+          type='link'
+          className='mx-auto'
+          size='medium'
+          onClick={() => downloadFile(`${API_URL}${item.url}`, item.title)}
+        >
           Скачать <DownloadDoc />
         </Button>
       </div>

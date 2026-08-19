@@ -3,7 +3,7 @@ import { SVGType } from './types';
 export const DownloadDoc = (props: SVGType) => {
   return (
     <svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none' {...props}>
-      <g clip-path='url(#clip0_166_4091)'>
+      <g clipPath='url(#clip0_166_4091)'>
         <path
           d='M6.01609 9.5C6.21315 9.50033 6.40832 9.46172 6.5904 9.38638C6.77249 9.31105 6.93789 9.20047 7.07709 9.061L9.03659 7.1L8.32959 6.395L6.51309 8.212L6.50009 0H5.50009L5.51309 8.204L3.70309 6.394L2.99609 7.1L4.95559 9.0595C5.09464 9.19915 5.2599 9.30996 5.44189 9.38556C5.62389 9.46115 5.81902 9.50004 6.01609 9.5Z'
           fill='currentColor'
