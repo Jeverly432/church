@@ -30,6 +30,17 @@
   :global(.anticon) {
     color: var(--main-green);
   }
+
+  :global(.ant-upload-list-item-thumbnail),
+  :global(.ant-upload-list-item-thumbnail .anticon) {
+    color: var(--main-green) !important;
+  }
+}
+
+.max {
+  :global(.ant-upload.ant-upload-select) {
+    display: none !important;
+  }
 }
 
 :global(.ant-form-item-has-error) .upload {

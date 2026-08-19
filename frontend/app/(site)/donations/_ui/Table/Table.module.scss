@@ -9,7 +9,7 @@
   }
 
   :global(.ant-table-tbody > tr > td) {
-    padding: 14px 0 !important;
+    padding: 14px 4px !important;
     border-bottom: 1px solid #bfbfbf6b !important;
     border-right: none !important;
     background: transparent !important;
@@ -17,7 +17,7 @@
     vertical-align: top;
   }
 
-  :global(.ant-table-tbody > tr:hover > td) {
-    background: transparent !important;
+  :global(.ant-table-tbody > tr.ant-table-row:hover > td) {
+    background: var(--main-gray) !important;
   }
 }

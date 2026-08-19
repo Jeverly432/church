@@ -1,7 +1,6 @@
 'use client';
 
-import Link from 'next/link';
-import { Button, Checkbox, Input, Upload } from '@/shared';
+import { Button, Checkbox, Input, Link, Upload } from '@/shared';
 import { Routes } from '@/shared/utils';
 import { Form, message, type FormProps, type UploadFile } from 'antd';
 import { useDocsStore } from '@/shared/store/docs';
@@ -45,8 +44,8 @@ export const DocsCreate = () => {
       {contextHolder}
       <div className='flex items-center justify-between gap-4'>
         <h1 className='text-[32px] leading-11 font-balkara text-black'>Новый документ</h1>
-        <Link href={Routes.DashboardDocs}>
-          <Button type='default'>К списку</Button>
+        <Link href={Routes.DashboardDocs} variant='default'>
+          К списку
         </Link>
       </div>
       <div className='flex flex-col gap-5 rounded-xl bg-main-gray p-5'>
@@ -77,7 +76,7 @@ export const DocsCreate = () => {
           <Form.Item className='mb-2!' name='pinned' valuePropName='checked'>
             <Checkbox>Закрепить документ</Checkbox>
           </Form.Item>
-          <Form.Item>
+          <Form.Item className='mb-0!'>
             <Button size='large' htmlType='submit' loading={isLoading}>
               Сохранить
             </Button>

@@ -6,6 +6,10 @@ export const links = [
     title: 'О БРАТСТВЕ',
   },
   {
+    href: Routes.News,
+    title: 'НОВОСТИ',
+  },
+  {
     href: Routes.Leaders,
     title: 'РУКОВОДСТВО',
   },

@@ -1,0 +1,38 @@
+.select {
+  width: 100%;
+  font-family: var(--font-gardens-src) !important;
+  --ant-color-primary: var(--main-green);
+  --ant-color-primary-hover: var(--main-green-hover);
+  --ant-select-hover-border-color: var(--main-green);
+  --ant-select-active-border-color: var(--main-green);
+  --ant-select-active-outline-color: color-mix(in srgb, var(--main-green) 20%, transparent);
+
+  &:hover:not(:global(.ant-select-disabled)),
+  &:global(.ant-select-focused),
+  &:global(.ant-select-open) {
+    --ant-select-border-color: var(--main-green) !important;
+    border-color: var(--main-green) !important;
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--main-green) 20%, transparent) !important;
+  }
+
+  :global(.ant-select-arrow),
+  :global(.ant-select-clear) {
+    color: var(--main-green);
+  }
+}
+
+.popup {
+  --ant-color-primary: var(--main-green);
+  --ant-color-primary-hover: var(--main-green-hover);
+  font-family: var(--font-gardens-src) !important;
+
+  :global(.ant-select-item-option-selected:not(.ant-select-item-option-disabled)) {
+    background: var(--main-green-light) !important;
+    color: var(--main-green-dark) !important;
+    font-weight: 500;
+  }
+
+  :global(.ant-select-item-option-active:not(.ant-select-item-option-selected)) {
+    background: var(--main-gray) !important;
+  }
+}

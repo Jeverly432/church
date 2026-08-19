@@ -3,9 +3,50 @@
   color: var(--main-green);
   font-size: 14px;
   line-height: 22px;
-  transition: color 0.2s ease;
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
 
   &:hover {
     color: var(--main-green-hover);
   }
+}
+
+.primary,
+.default {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  padding: 4px 15px;
+  border-radius: 6px;
+  font-family: var(--font-gardens-src);
+  font-size: 14px;
+  line-height: 22px;
+  text-decoration: none;
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.primary {
+  background-color: var(--main-green);
+  color: #fff;
+
+  &:hover {
+    background-color: var(--main-green-hover);
+    color: #fff;
+  }
+}
+
+.default {
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  color: rgba(0, 0, 0, 0.88);
+
+  &:hover {
+    border-color: var(--main-green);
+    color: var(--main-green);
+  }
+}
+
+.large {
+  height: 40px;
+  padding: 8px 15px;
 }

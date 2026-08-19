@@ -1,9 +1,9 @@
 'use client';
 
-import { Button } from '@/shared';
+import { Link } from '@/shared';
 import news from '@shared/assets/images/Home/news.webp';
 import Image from 'next/image';
-import Link from 'next/link';
+import NextLink from 'next/link';
 import { useEffect, useState } from 'react';
 import { data } from './News.data';
 import { NewsSkeleton } from './Skeleton.component';
@@ -34,7 +34,7 @@ export const News = () => {
                   <ul className='flex justify-between gap-6'>
                     {data.map((item, index) => (
                       <li key={index}>
-                        <Link href={item.link} className='group flex flex-col gap-3.5 w-full'>
+                        <NextLink href={item.link} className='group flex flex-col gap-3.5 w-full'>
                           <div className='relative h-70'>
                             <Image src={news} alt='news' fill sizes='' />
                           </div>
@@ -52,13 +52,13 @@ export const News = () => {
                               <p className='text-[16px] leading-5.5 text-black'>{item.desc}</p>
                             </div>
                           </div>
-                        </Link>
+                        </NextLink>
                       </li>
                     ))}
                   </ul>
-                  <Button className='mx-auto' href={Routes.News}>
+                  <Link className='mx-auto' href={Routes.News} variant='primary'>
                     Все новости
-                  </Button>
+                  </Link>
                 </div>
               )}
             </div>
