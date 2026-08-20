@@ -1,0 +1,31 @@
+name: Deploy API
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'backend/**'
+      - 'ecosystem.config.cjs'
+      - 'deploy/**'
+      - '.github/workflows/deploy.yml'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Pull and restart API on VPS
+        uses: appleboy/ssh-action@v1.2.2
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            set -e
+            cd /var/www/church
+            git fetch origin main
+            git reset --hard origin/main
+            cd backend
+            npm ci --omit=dev
+            cd /var/www/church
+            pm2 startOrReload ecosystem.config.cjs --update-env
+            pm2 save

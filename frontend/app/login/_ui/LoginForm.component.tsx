@@ -42,10 +42,10 @@ export const LoginForm = () => {
       {contextHolder}
       <Form layout='vertical' requiredMark={false} onFinish={onFinish} disabled={isLoading} className='w-full'>
         <Form.Item label='Логин' name='email' rules={[{ required: true, message: '' }]}>
-          <Input placeholder='admin' autoComplete='username' />
+          <Input placeholder='user' autoComplete='username' />
         </Form.Item>
         <Form.Item label='Пароль' name='password' rules={[{ required: true, message: '' }]}>
-          <Input.Password placeholder='Пароль' autoComplete='current-password' size='large' />
+          <Input.Password placeholder='password' autoComplete='current-password' size='large' />
         </Form.Item>
         <Form.Item>
           <Button htmlType='submit' size='large' loading={isLoading} className='w-full'>
