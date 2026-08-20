@@ -1,5 +1,18 @@
 import type { NextConfig } from 'next';
 
-const nextConfig: NextConfig = {/* config options here */};
+const apiProxy = process.env.API_PROXY_URL?.replace(/\/$/, '');
+
+const nextConfig: NextConfig = {
+  async rewrites() {
+    if (!apiProxy) {
+      return [];
+    }
+
+    return [
+      { source: '/api/:path*', destination: `${apiProxy}/api/:path*` },
+      { source: '/uploads/:path*', destination: `${apiProxy}/uploads/:path*` },
+    ];
+  },
+};
 
 export default nextConfig;

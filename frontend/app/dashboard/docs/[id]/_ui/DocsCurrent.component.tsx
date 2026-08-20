@@ -8,14 +8,13 @@ import { useAuthStore } from '@/shared/store/auth';
 import { useParams, useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 import styles from './DocsCurrent.module.scss';
+import { API_URL } from '@/shared/api/client';
 
 type DocsForm = {
   title: string;
   file: UploadFile[];
   pinned?: boolean;
 };
-
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
 
 export const DocsCurrent = () => {
   const router = useRouter();

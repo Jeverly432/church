@@ -5,8 +5,7 @@ import Link from 'next/link';
 import { Routes } from '@/shared/utils';
 import { useLeadersStore } from '@/shared/store/leaders';
 import { useEffect } from 'react';
-
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+import { API_URL } from '@/shared/api/client';
 
 export const List = () => {
   const leaders = useLeadersStore((state) => state.leaders);

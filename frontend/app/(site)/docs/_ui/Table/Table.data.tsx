@@ -3,8 +3,7 @@ import { DownloadDoc, Pin } from '@/shared/assets/icons';
 import { Button } from '@/shared';
 import type { Document as Doc } from '@/shared/store/docs';
 import { downloadFile } from '@/shared/utils';
-
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+import { API_URL } from '@/shared/api/client';
 
 export const columns: ColumnsType<Doc> = [
   {

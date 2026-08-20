@@ -8,6 +8,7 @@ import { Form, message, type FormProps, type UploadFile } from 'antd';
 import { useParams, useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 import styles from './LeadersCurrent.module.scss';
+import { API_URL } from '@/shared/api/client';
 
 const requiredFiles = {
   validator: (_: unknown, fileList: UploadFile[]) => {
@@ -18,8 +19,6 @@ const requiredFiles = {
     return Promise.resolve();
   },
 };
-
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
 
 type LeaderForm = {
   name: string;

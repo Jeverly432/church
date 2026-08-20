@@ -3,8 +3,7 @@ import type { News } from '@/shared/store/news';
 import NextLink from 'next/link';
 import { Link } from '@/shared';
 import { Routes } from '@/shared/utils';
-
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+import { API_URL } from '@/shared/api/client';
 
 const formatDate = (value?: string | null) => {
   if (!value) {

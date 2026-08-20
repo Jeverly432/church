@@ -1,4 +1,6 @@
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+import { API_URL } from './baseUrl';
+
+export { API_URL };
 
 type RequestOptions = {
   method?: string;

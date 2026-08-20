@@ -1,8 +1,7 @@
 'use client';
 
 import type { LeaderPhoto } from '@/shared/store/leaders';
-
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+import { API_URL } from '@/shared/api/client';
 
 const rowClass = ['grid h-67 grid-cols-[35fr_25fr_40fr] gap-4', 'grid h-67 grid-cols-[18fr_64fr_18fr] gap-4'];
 

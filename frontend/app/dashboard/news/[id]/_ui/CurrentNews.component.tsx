@@ -9,9 +9,7 @@ import { useParams, useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 import styles from './CurrentNews.module.scss';
 import { useAuthStore } from '@/shared/store/auth';
-
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
-
+import { API_URL } from '@/shared/api/client';
 type NewsForm = {
   title: string;
   date: Dayjs;

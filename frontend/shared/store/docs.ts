@@ -1,7 +1,7 @@
 'use client';
 
 import { create } from 'zustand';
-import { apiRequest } from '../api/client';
+import { apiRequest, API_URL } from '../api/client';
 
 export type Document = {
   id: number;
@@ -75,7 +75,7 @@ export const useDocsStore = create<DocsState>()((set) => ({
       form.append('file', file);
     }
 
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/docs/${id}`, {
+    const response = await fetch(`${API_URL}/api/docs/${id}`, {
       method: 'PATCH',
       headers: { Authorization: `Bearer ${token}` },
       body: form,
@@ -101,7 +101,7 @@ export const useDocsStore = create<DocsState>()((set) => ({
     form.append('pinned', String(pinned));
     form.append('file', file);
 
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/docs`, {
+    const response = await fetch(`${API_URL}/api/docs`, {
       method: 'POST',
       headers: { Authorization: `Bearer ${token}` },
       body: form,

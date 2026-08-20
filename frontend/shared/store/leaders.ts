@@ -1,9 +1,7 @@
 'use client';
 
 import { create } from 'zustand';
-import { apiRequest } from '../api/client';
-
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+import { apiRequest, API_URL } from '../api/client';
 
 export type LeaderPhoto = {
   id: number;

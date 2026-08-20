@@ -1,8 +1,7 @@
 'use client';
 
 import type { Leader } from '@/shared/store/leaders';
-
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+import { API_URL } from '@/shared/api/client';
 
 export const Profile = ({ leader }: { leader: Leader }) => {
   return (
